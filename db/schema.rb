@@ -10,16 +10,46 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_06_085550) do
-
+ActiveRecord::Schema.define(version: 20_220_706_135_221) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  enable_extension 'plpgsql'
 
-  create_table "users", force: :cascade do |t|
-    t.string "email"
-    t.string "password_digest"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table 'comments', force: :cascade do |t|
+    t.text 'body'
+    t.bigint 'task_id'
+    t.string 'attachment'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['task_id'], name: 'index_comments_on_task_id'
   end
 
+  create_table 'projects', force: :cascade do |t|
+    t.string 'title'
+    t.bigint 'user_id'
+    t.integer 'position'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['user_id'], name: 'index_projects_on_user_id'
+  end
+
+  create_table 'tasks', force: :cascade do |t|
+    t.string 'name'
+    t.boolean 'done', default: false
+    t.bigint 'project_id'
+    t.integer 'position', default: 0
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['project_id'], name: 'index_tasks_on_project_id'
+  end
+
+  create_table 'users', force: :cascade do |t|
+    t.string 'email'
+    t.string 'password_digest'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+  end
+
+  add_foreign_key 'comments', 'tasks'
+  add_foreign_key 'projects', 'users'
+  add_foreign_key 'tasks', 'projects'
 end
