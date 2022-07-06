@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :project do
-    title { "MyString" }
+    title { FFaker::DizzleIpsum.word }
     user { nil }
-    position { 1 }
+    position { rand(0..5) }
   end
 end

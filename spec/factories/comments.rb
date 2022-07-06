@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :comment do
-    body { "MyText" }
+    body { FFaker::DizzleIpsum.paragraph }
     task { nil }
-    attachment { "MyString" }
+    attachment { nil }
   end
 end
