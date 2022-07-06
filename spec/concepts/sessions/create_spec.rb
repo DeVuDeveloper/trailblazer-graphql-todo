@@ -1,3 +1,5 @@
+require 'rails_helper'
+
 RSpec.describe Sessions::Create do
   context 'failure' do
     context 'invalid params' do

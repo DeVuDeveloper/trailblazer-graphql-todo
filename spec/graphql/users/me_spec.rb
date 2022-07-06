@@ -10,6 +10,20 @@ RSpec.describe GraphqlsController, type: :controller do
           me {
             id
             email
+            projects {
+              id
+              title
+              tasks {
+                id
+                name
+                done
+                comments {
+                  id
+                  body
+                  attachmentUrl
+                }
+              }
+            }
           }
         }
       '
