@@ -62,3 +62,6 @@ gem 'dry-validation'
 gem 'trailblazer-rails'
 
 gem 'graphql'
+
+gem 'bcrypt'
+gem 'jwt'

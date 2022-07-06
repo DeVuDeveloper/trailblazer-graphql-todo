@@ -51,6 +51,7 @@ GEM
       tzinfo (~> 1.1)
     arel (9.0.0)
     awesome_print (1.9.2)
+    bcrypt (3.1.18)
     bootsnap (1.12.0)
       msgpack (~> 1.2)
     builder (3.2.4)
@@ -121,6 +122,7 @@ GEM
     hirb (0.7.3)
     i18n (1.10.0)
       concurrent-ruby (~> 1.0)
+    jwt (2.4.1)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -275,6 +277,7 @@ PLATFORMS
 
 DEPENDENCIES
   awesome_print
+  bcrypt
   bootsnap (>= 1.1.0)
   byebug
   coffee-rails
@@ -284,6 +287,7 @@ DEPENDENCIES
   ffaker
   graphiql-rails
   graphql
+  jwt
   listen (>= 3.0.5, < 3.2)
   pg (>= 0.18, < 2.0)
   pry-byebug
