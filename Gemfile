@@ -62,3 +62,9 @@ gem 'dry-validation'
 gem 'trailblazer-rails'
 
 gem 'graphql'
+
+gem 'bcrypt'
+gem 'jwt'
+
+gem 'apollo_upload_server', '2.0.0.beta.1'
+gem 'carrierwave'
